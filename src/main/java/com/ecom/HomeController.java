@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 /*
  * Home Controller
  * 
- * 
+ * @author Ruchi Dounde
  * **/
 @Controller
 public class HomeController {
