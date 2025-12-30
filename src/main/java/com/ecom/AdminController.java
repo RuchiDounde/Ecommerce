@@ -86,7 +86,6 @@ public class AdminController {
 			}else {
 				
 				File savefile=new ClassPathResource("static/img").getFile();
-				
 				Path path = Paths.get(savefile.getAbsolutePath()+File.separator+"LatestProduct" + File.separator+file.getOriginalFilename());
 				
 				System.out.println(path);
@@ -203,6 +202,15 @@ public class AdminController {
 	  public String updateProduct(@ModelAttribute Product product, @RequestParam("file") MultipartFile image,
 			  HttpSession session ,org.springframework.ui.Model m) {
 		
+		session.removeAttribute("successMsg");
+		session.removeAttribute("errorMsg");
+		
+		if (product.getDiscount()<0 || product.getDiscount()>100)
+		{
+			session.setAttribute("errorMsg", "Invalid Discount");
+			
+          }else {
+	
 		Product updateProduct = productService.updateProduct(product, image);
 		if (!ObjectUtils.isEmpty(updateProduct)) {
 			session.setAttribute("successMsg", "Product update Success");
@@ -210,7 +218,10 @@ public class AdminController {
 				session.setAttribute("errorMsg", "Something wrong on server");
 
 			}
+          }
+		
 	  		  return"redirect:/admin/editProduct/" + product.getId();
 	  }
 }
+
 

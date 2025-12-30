@@ -6,7 +6,7 @@
 </head>
 <body>
    <section>
-     <div class="container mt-5 p-5">
+     <div class="container-fluid mt-5 p-5">
        <div class="card card-sh">
       <div class="card-header text-center">
       <p class="fs-4">View Product</p>
@@ -29,6 +29,9 @@
       <th scope="col">Title</th>
       <th scope="col">Category</th>
       <th scope="col">Price</th>
+      <th scope="col">Discount</th>
+      <th scope="col">Discount Price</th>
+       <th scope="col">Status</th>
       <th scope="col">Stock</th>
       <th scope="col">Action</th>
     </tr>
@@ -40,6 +43,9 @@
       <td>[[${p.title}]]</td>
       <td>[[${p.category}]]</td>
       <td>[[${p.price}]]</td>
+      <td>[[${p.discount}]]</td>
+      <td>[[${p.discountPrice}]]</td>
+      <td>[[${p.isActive}]]</td>
       <td>[[${p.stock}]]</td>
       <td> <a th:href="@{'/admin/editProduct/' + ${p.id}}" class="btn btn-sm btn-primary"><i  class="fa-solid fa-pen-to-square"></i>Edit</a>
       
