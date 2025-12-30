@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 /*
  * Home Controller
  * 
- * @author Ruchi Dounde
+ * @author Ruchi 
  * **/
 @Controller
 public class HomeController {
