@@ -177,7 +177,7 @@ public class AdminController {
 	@GetMapping("/products")
 	  public String loadViewProduct(org.springframework.ui.Model m) {//addAtribute is used for see in UI
 		m.addAttribute("products", productService.getAllProducts());
-		  return"admin/products";
+		  return"admin/product";
 	  }
 	
 	@GetMapping("/deleteProduct/{id}")

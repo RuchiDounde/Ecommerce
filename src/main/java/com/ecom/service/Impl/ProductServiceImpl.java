@@ -107,7 +107,9 @@ public class ProductServiceImpl implements ProductService {
 			products = productRepository.findByIsActiveTrue();
 		}else {
 			products=productRepository.findByCategory(category);
+			System.out.println(products);
 		}
+		System.out.println(products);
 		return products;
 	}
 
